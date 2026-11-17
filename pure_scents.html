@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pure Scents Outlet | Luxury Fragrances</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gold: #d8b477;
+    --light-gold: #f3dfb4;
+    --dark: #100e0b;
+}
+
+body {
+    background: var(--dark);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(16,14,11,.95);
+    border-bottom: 1px solid rgba(216,180,119,.2);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 12px;
+    color: #ddd;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.nav-btn {
+    background: linear-gradient(120deg,#a77b3f,#f0d6a0);
+    color: #17110b;
+    padding: 11px 18px;
+    font-weight: 600;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 130px 8% 80px;
+    background:
+    radial-gradient(ellipse at 75% 50%,#50351e 0%,transparent 40%),
+    linear-gradient(120deg,#090807,#1b140e,#090807);
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: 8%;
+    top: 20%;
+    border-radius: 50%;
+    border: 1px solid rgba(216,180,119,.18);
+    box-shadow:
+    0 0 0 40px rgba(216,180,119,.025),
+    0 0 0 80px rgba(216,180,119,.02);
+    animation: rotate 30s linear infinite;
+}
+
+.hero:after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 400px;
+    right: 17%;
+    top: 27%;
+    border-radius: 45% 45% 30% 30%;
+    border: 1px solid #d8b477;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.13),
+        rgba(216,180,119,.04),
+        rgba(0,0,0,.35)
+    );
+    box-shadow: inset 0 0 50px rgba(216,180,119,.12),
+                0 20px 80px #0008;
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    animation: fadeUp 1.2s ease;
+}
+
+.tag {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px,7vw,85px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    color: #c7bdb0;
+    max-width: 540px;
+    line-height: 2;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 27px;
+    margin: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(120deg,#a77b3f,#f3d9a4);
+    color: #17110b;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+}
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px,5vw,52px);
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-design {
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background:
+    radial-gradient(circle,#594026,#21160e 60%,#100e0b);
+    border: 1px solid #8c6939;
+    overflow: hidden;
+}
+
+.about-design:before {
+    content: "PURE";
+    font-family: 'Playfair Display',serif;
+    font-size: 110px;
+    color: rgba(216,180,119,.08);
+    letter-spacing: 10px;
+    position: absolute;
+}
+
+.bottle {
+    width: 135px;
+    height: 230px;
+    border: 2px solid var(--gold);
+    border-radius: 35px 35px 20px 20px;
+    background: linear-gradient(
+        110deg,
+        rgba(255,255,255,.25),
+        rgba(216,180,119,.12),
+        rgba(0,0,0,.5)
+    );
+    box-shadow: 0 15px 60px #0008,
+                inset 0 0 30px rgba(216,180,119,.15);
+    position: relative;
+    z-index: 1;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bottle:before {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 35px;
+    top: -37px;
+    left: 42px;
+    background: linear-gradient(90deg,#92703d,#f2d49c,#92703d);
+    border-radius: 5px 5px 0 0;
+}
+
+.bottle:after {
+    content: "PURE SCENTS";
+    position: absolute;
+    top: 95px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Playfair Display',serif;
+    font-size: 13px;
+    color: var(--light-gold);
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: 43px;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: #aaa;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+.collection {
+    background: linear-gradient(130deg,#e8dcc7,#f8f1e5);
+    color: #17110b;
+}
+
+.collection .section-title p {
+    color: #766b5d;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    min-height: 300px;
+    padding: 35px 25px;
+    background: linear-gradient(145deg,#2b2015,#100e0b);
+    color: white;
+    text-align: center;
+    border: 1px solid #b58c50;
+    transition: .4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px #0003;
+    background: linear-gradient(145deg,#4b321d,#17100b);
+}
+
+.card-number {
+    color: var(--gold);
+    font-family: 'Playfair Display',serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: 'Playfair Display',serif;
+    font-size: 26px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.card a {
+    color: var(--light-gold);
+    font-size: 11px;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 6px;
+    align-self: center;
+}
+
+.featured {
+    background: linear-gradient(120deg,#110d09,#382719,#110d09);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.featured-card {
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255,255,255,.035);
+    border: 1px solid rgba(216,180,119,.35);
+    transition: .4s;
+}
+
+.featured-card:hover {
+    transform: translateY(-8px);
+    background: rgba(216,180,119,.08);
+}
+
+.featured-card h3 {
+    font-family: 'Playfair Display',serif;
+    font-size: 24px;
+    color: var(--gold);
+    margin: 18px 0;
+}
+
+.featured-card p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.why-card {
+    padding: 35px 25px;
+    border: 1px solid #5c472c;
+    background: linear-gradient(145deg,#241a12,#111);
+    transition: .3s;
+}
+
+.why-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-8px);
+}
+
+.why-card h3 {
+    font-family: 'Playfair Display',serif;
+    font-size: 24px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.review {
+    text-align: center;
+    background: linear-gradient(120deg,#352315,#17110c);
+}
+
+.review h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: 42px;
+    color: var(--gold);
+    margin-bottom: 30px;
+}
+
+.review blockquote {
+    max-width: 800px;
+    margin: auto;
+    color: #e4d8c7;
+    font-size: 20px;
+    line-height: 2;
+}
+
+.review small {
+    display: block;
+    margin-top: 22px;
+    color: var(--gold);
+}
+
+.contact {
+    background: linear-gradient(135deg,#100e0b,#342316,#100e0b);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: 45px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: #bbb;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.details {
+    border-top: 1px solid #5d482e;
+    margin-top: 30px;
+}
+
+.details p {
+    padding: 15px 0;
+    border-bottom: 1px solid #5d482e;
+}
+
+.contact-form {
+    padding: 35px;
+    background: linear-gradient(145deg,#39291b,#17100a);
+    border: 1px solid #9c7543;
+    box-shadow: 0 20px 60px #0005;
+}
+
+.contact-form h3 {
+    font-family: 'Playfair Display',serif;
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    background: rgba(0,0,0,.35);
+    border: 1px solid #725532;
+    color: white;
+    outline: none;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--light-gold);
+}
+
+.contact-form textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+footer {
+    padding: 35px;
+    text-align: center;
+    background: #080706;
+    color: #aaa;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer strong {
+    font-family: 'Playfair Display',serif;
+    color: var(--gold);
+    font-size: 23px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 16px 22px;
+    background: linear-gradient(120deg,#b88b45,#f0d49b);
+    color: #17110a;
+    font-weight: 600;
+    font-size: 11px;
+    z-index: 1000;
+    transition: .3s;
+}
+
+.whatsapp:hover {
+    transform: translateY(-5px);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(35px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes float {
+    0%,100% {transform:translateY(0);}
+    50% {transform:translateY(-15px);}
+}
+
+@keyframes rotate {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@media(max-width:1000px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero:before,
+    .hero:after {
+        opacity: .35;
+        right: -5%;
+    }
+
+    .about,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:650px) {
+    nav {
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .collection-grid,
+    .featured-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero:before,
+    .hero:after {
+        display: none;
+    }
+
+    .contact-form {
+        padding: 22px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation:none!important;
+        transition:none!important;
+        scroll-behavior:auto!important;
+    }
+    .reveal {
+        opacity:1;
+        transform:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PURE SCENTS</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#collection">Collections</a>
+        <a href="#featured">Featured</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-btn" href="#contact">Enquire Now</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="tag">THE ART OF FRAGRANCE</div>
+
+        <h1>Discover Your <span>Signature</span> Scent</h1>
+
+        <p>
+            Discover a world of distinctive fragrances.
+            Find the scent that expresses your personality,
+            complements your style and makes every moment memorable.
+        </p>
+
+        <a class="btn" href="#collection">EXPLORE COLLECTION</a>
+
+        <a class="btn btn-outline" href="#contact">CONTACT US</a>
+
+    </div>
+</section>
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="about-design reveal">
+            <div class="bottle"></div>
+        </div>
+
+        <div class="about-content reveal">
+
+            <div class="tag">OUR STORY</div>
+
+            <h2>Where Fragrance Meets Elegance</h2>
+
+            <p>
+                Welcome to Pure Scents Outlet, a destination
+                for discovering distinctive fragrances.
+            </p>
+
+            <p>
+                We believe a fragrance is more than a scent.
+                It is an expression of personality, confidence
+                and individuality.
+            </p>
+
+            <p>
+                Visit our outlet in Keamari, Karachi, and
+                explore our available fragrance collection.
+            </p>
+
+            <a class="btn" href="#contact">VISIT OUR STORE</a>
+
+        </div>
+    </div>
+</section>
+
+<section class="collection" id="collection">
+
+    <div class="section-title reveal">
+        <h2>Explore Our Collections</h2>
+        <p>Find a fragrance style that suits you.</p>
+    </div>
+
+    <div class="collection-grid">
+
+        <div class="card reveal">
+            <div class="card-number">01</div>
+            <h3>Fresh Collection</h3>
+            <p>
+                Discover fresh fragrance styles
+                for everyday moments.
+            </p>
+            <a href="https://wa.me/923322271043?text=Tell%20me%20about%20fresh%20fragrances">
+                EXPLORE COLLECTION
+            </a>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-number">02</div>
+            <h3>Luxury Collection</h3>
+            <p>
+                Explore distinctive scents with
+                a premium character.
+            </p>
+            <a href="https://wa.me/923322271043?text=Tell%20me%20about%20luxury%20fragrances">
+                EXPLORE COLLECTION
+            </a>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-number">03</div>
+            <h3>Classic Collection</h3>
+            <p>
+                Discover timeless fragrance styles
+                for special occasions.
+            </p>
+            <a href="https://wa.me/923322271043?text=Tell%20me%20about%20classic%20fragrances">
+                EXPLORE COLLECTION
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="featured" id="featured">
+
+    <div class="section-title reveal">
+        <h2>Featured Fragrances</h2>
+        <p>Ask about our currently available products.</p>
+    </div>
+
+    <div class="featured-grid">
+
+        <div class="featured-card reveal">
+            <h3>Pacific Chill</h3>
+            <p>
+                A fragrance mentioned by one of our
+                satisfied customers.
+            </p>
+            <a class="btn" href="https://wa.me/923322271043?text=I%20am%20interested%20in%20Pacific%20Chill">
+                ASK FOR DETAILS
+            </a>
+        </div>
+
+        <div class="featured-card reveal">
+            <h3>Signature Scents</h3>
+            <p>
+                Contact us to explore our available
+                signature fragrances.
+            </p>
+            <a class="btn" href="https://wa.me/923322271043?text=Tell%20me%20about%20signature%20scents">
+                ASK FOR DETAILS
+            </a>
+        </div>
+
+        <div class="featured-card reveal">
+            <h3>Premium Selection</h3>
+            <p>
+                Ask us about our current premium
+                fragrance selection.
+            </p>
+            <a class="btn" href="https://wa.me/923322271043?text=Tell%20me%20about%20premium%20fragrances">
+                ASK FOR DETAILS
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section id="why">
+
+    <div class="section-title reveal">
+        <h2>The Pure Scents Experience</h2>
+        <p>A personal approach to discovering fragrances.</p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card reveal">
+            <h3>Quality Selection</h3>
+            <p>
+                Explore our fragrance options and
+                ask for product information.
+            </p>
+        </div>
+
+        <div class="why-card reveal">
+            <h3>Personal Service</h3>
+            <p>
+                Tell us your fragrance preferences
+                and enquire about suitable options.
+            </p>
+        </div>
+
+        <div class="why-card reveal">
+            <h3>Easy Communication</h3>
+            <p>
+                Contact our business directly
+                through WhatsApp.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="review" id="reviews">
+
+    <div class="reveal">
+        <h2>Customer Experience</h2>
+
+        <blockquote>
+            "I am very impressed with the quality.
+            The perfume has strong projection and
+            good longevity."
+        </blockquote>
+
+        <small>Google Customer Review</small>
+        <small>5.0 / 5.0 · 1 Google Review</small>
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <div class="contact-grid">
+
+        <div class="contact-info reveal">
+
+            <div class="tag">GET IN TOUCH</div>
+
+            <h2>Let's Find Your Perfect Fragrance</h2>
+
+            <p>
+                Have questions about our fragrances?
+                Send us a message through the contact
+                form or WhatsApp.
+            </p>
+
+            <div class="details">
+
+                <p>
+                    <strong>Address</strong><br>
+                    Shop No. 2, Opposite Sindh Bank /
+                    Keamari Roll Point, Port Trust Lines,
+                    Keamari, Karachi, Pakistan.
+                </p>
+
+                <p>
+                    <strong>Phone / WhatsApp</strong><br>
+                    +92 332 2271043
+                </p>
+
+                <p>
+                    <strong>Website</strong><br>
+                    purescents.pk
+                </p>
+
+            </div>
+
+            <a class="btn" href="https://wa.me/923322271043">
+                DIRECT WHATSAPP CHAT
+            </a>
+
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+
+            <h3>Send Us A Message</h3>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your Full Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Your Phone Number"
+                required
+            >
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="Your Email Address"
+                required
+            >
+
+            <textarea
+                id="customerMessage"
+                placeholder="Write Your Message..."
+                required
+            ></textarea>
+
+            <button type="submit" class="btn">
+                SEND VIA WHATSAPP
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+<footer>
+    <strong>PURE SCENTS OUTLET</strong>
+
+    <p>Keamari, Karachi, Pakistan</p>
+
+    <p>
+        © <span id="year"></span>
+        Pure Scents Outlet. All Rights Reserved.
+    </p>
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/923322271043?text=Hello%20Pure%20Scents%20Outlet"
+target="_blank">
+    CONTACT ON WHATSAPP
+</a>
+
+<script>
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, {threshold: 0.12});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+document.getElementById("contactForm").addEventListener(
+"submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+    document.getElementById("customerName").value.trim();
+
+    const phone =
+    document.getElementById("customerPhone").value.trim();
+
+    const email =
+    document.getElementById("customerEmail").value.trim();
+
+    const message =
+    document.getElementById("customerMessage").value.trim();
+
+    const whatsappMessage =
+`NEW CUSTOMER ENQUIRY
+
+Business: Pure Scents Outlet
+
+Customer Name: ${name}
+Phone: ${phone}
+Email: ${email}
+
+Message:
+${message}`;
+
+    const whatsappLink =
+    "https://wa.me/923322271043?text=" +
+    encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappLink, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
